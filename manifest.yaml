@@ -58,12 +58,14 @@ app:
   name: Module Navigator
   # The version you are pushing. Bump it after a version is submitted for
   # review: a submitted version is frozen.
-  version: 0.1.0
+  version: 0.2.0
   # Never use the word "by" here: the badge is parsed on it.
   summary: >-
-    Looks up prerequisites, follow-on modules and option rules for Imperial
-    College Mathematics degrees, from the published 2026-27 module guides.
-    Unofficial and sends nothing anywhere; confirm choices with your department.
+    Looks up prerequisites, follow-on modules, option rules and module
+    suggestions for a career or research interest, for Imperial College
+    Mathematics and Computing degrees. Built from the published 2026-27 module
+    guides; unofficial and sends nothing anywhere, so confirm choices with
+    your department.
 
 agent_types:
   - personal
@@ -197,3 +199,68 @@ outcomes:
         type: array
         item_type: string
         description: The choice rules for that degree and year, in plain words.
+
+  - id: modules.recommend
+    summary: Suggest modules that suit a research interest or career path someone describes
+    example_phrases:
+      - recommend modules for a career in finance
+      - which modules should a future quant study
+      - best modules for machine learning research
+      - suggest courses for a phd in pure maths
+      - what suits someone interested in cryptography
+      - good choices for a job in data science
+      - i like fluid dynamics what would you recommend
+    inputs:
+      - name: interests
+        type: string
+        required: false
+        description: >-
+          The research interests or career the user describes, in their own
+          words, for example "quant finance at a hedge fund", "machine learning
+          research" or "climate modelling". Return an empty string if they did
+          not describe any, rather than guessing.
+      - name: taken
+        type: string
+        required: false
+        description: >-
+          Modules the user says they have already taken or are taking, as they
+          wrote them, separated by commas, for example "Groups and Rings,
+          MATH50010". Return an empty string if they did not mention any.
+      - name: degree
+        type: string
+        required: false
+        description: >-
+          The user's degree, as they wrote it: a code such as "G100" or "G400",
+          or a name such as "Maths with Statistics" or "Computing MEng". Return
+          an empty string if they did not say, rather than guessing.
+      - name: year
+        type: integer
+        required: false
+        description: >-
+          The year of study they are choosing modules for (2 for second year, 3
+          for third year, 4 for fourth year). Leave this out entirely if they
+          did not say.
+    output:
+      - name: interests_matched
+        type: array
+        item_type: string
+        description: The subject areas the description was matched to.
+      - name: degree
+        type: string
+      - name: year
+        type: integer
+      - name: academic_year
+        type: string
+      - name: recommended
+        type: array
+        item_type: string
+        description: Suggested modules, best match first, with the areas they fit.
+      - name: needs_prerequisites
+        type: array
+        item_type: string
+        description: Good matches whose essential prerequisites the user has not taken.
+      - name: not_recognised
+        type: array
+        item_type: string
+        required: false
+        description: Modules the user listed that are not in the guides.

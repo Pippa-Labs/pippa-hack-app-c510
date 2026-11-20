@@ -6,7 +6,12 @@ is fetched at run time.
 
 To add a degree or a year, drop another `<department>_<year>.json` beside this
 file in the same shape and add its name to DATA_FILES. Module codes are
-unique across Imperial, so files merge into one catalogue.
+unique across Imperial, so files merge into one catalogue: a degree in one
+file may list a module defined in another (JMC lists Maths modules), and a
+module is defined in one file only.
+
+When two modules share a title (a year 3 module and its year 4 form), the
+title finds the earlier one; the later one is found by its code.
 """
 
 from __future__ import annotations
@@ -17,7 +22,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-DATA_FILES = ("maths_2026-27.json",)
+DATA_FILES = ("maths_2026-27.json", "computing_2026-27.json")
 
 _CODE = re.compile(r"\b([a-z]{4})?\s*([4-7]\d{4})\b")
 _NOT_WORD = re.compile(r"[^a-z0-9]+")
@@ -32,8 +37,12 @@ class Catalogue:
     modules: dict = field(default_factory=dict)
     degrees: dict = field(default_factory=dict)
     streams: dict = field(default_factory=dict)
+    #: stream id -> words that point to it in a description of interests
+    stream_keywords: dict = field(default_factory=dict)
     #: module code -> academic year of the file it came from
     academic_year: dict = field(default_factory=dict)
+    #: a bare subject ("maths", "computing") -> the degree it stands for
+    generic_degrees: dict = field(default_factory=dict)
     #: normalised title or alias -> module code
     names: dict = field(default_factory=dict)
     #: module code -> codes that list it as required / recommended
@@ -52,13 +61,22 @@ class Catalogue:
     def add(self, data: dict) -> None:
         year = data["academic_year"]
         self.streams.update(data.get("streams", {}))
+        for stream, words in data.get("stream_keywords", {}).items():
+            known = self.stream_keywords.setdefault(stream, [])
+            known.extend(w for w in words if w not in known)
         for code, degree in data.get("degrees", {}).items():
             self.degrees[code] = {**degree, "academic_year": year}
+        for name in data.get("generic_degree_names", []):
+            self.generic_degrees[_norm(name)] = data["default_degree"]
         for code, module in data["modules"].items():
             self.modules[code] = module
             self.academic_year[code] = year
+        self.names = {}
+        for code in sorted(self.modules, key=lambda c: (self.modules[c]["year"], c)):
+            module = self.modules[code]
             for name in [module["title"], *module.get("aliases", [])]:
-                self.names[_norm(name)] = code
+                self.names.setdefault(_norm(name), code)
+        self.required_for, self.useful_for = {}, {}
         # The reverse map is computed, never stored, so it cannot drift.
         for code, module in self.modules.items():
             prereqs = module.get("prerequisites", {})
@@ -123,7 +141,10 @@ class Catalogue:
         module = self.modules.get(code)
         if not module:
             return code
-        return f"{code} {module['title']} (Year {module['year']})"
+        text = f"{code} {module['title']} (Year {module['year']})"
+        if module.get("not_running"):
+            text += " [not running in 2026-27]"
+        return text
 
     # ── Answers ───────────────────────────────────────────────────────────
 
@@ -165,22 +186,101 @@ class Catalogue:
             "rules": list(plan.get("rules", [])),
         }
 
-    def recommend(self, taken: list[str], direction: str, degree: str | None = None,
-                  year: int | None = None) -> list[str]:
-        """EXTENSION POINT: suggest modules for a career or research direction.
+    def directions(self, text: str) -> dict[str, int]:
+        """Stream id -> how many of its keywords the text mentions."""
+        padded = f" {_norm(text)} "
+        hits = {}
+        for stream, words in self.stream_keywords.items():
+            count = sum(1 for word in words if f" {_norm(word)} " in padded)
+            if count:
+                hits[stream] = count
+        return hits
 
-        Not wired to any outcome yet. Declaring an outcome Pippa can route to
-        and then refuse would look exactly like a broken app. The data it
-        needs is already in place: every module carries `streams` tags (see
-        `streams` in the data file), `prerequisites` says what must come
-        first, and `unlocks` gives the reverse direction. A first version
-        would: map `direction` to stream ids, keep modules in those streams
-        whose essential prerequisites are all in `taken` and which are not
-        excluded by anything in `taken`, then rank them by how many later
-        modules in the same streams each one unlocks.
+    def recommend(self, interests: str, taken: list[str] = (), degree: str | None = None,
+                  year: int = 3, limit: int = 8) -> dict | None:
+        """Modules that suit a research interest or career, for one year of study.
 
-        When it is implemented, add a `modules.recommend` outcome to
-        manifest.yaml with `taken` (array of string) and `direction` (string)
-        inputs, and a branch in App.handle.
+        `interests` is matched against each stream's keywords. A module scores
+        for its own streams, and for the later modules in those streams that
+        it is a prerequisite of, which is what lets a year 2 elective be
+        recommended for where it leads. Modules already taken, or excluded
+        by one that was, are left out. When `taken` is given, a module whose
+        essential prerequisites are missing is listed apart rather than
+        recommended. Returns None if the interests match no stream.
         """
-        raise NotImplementedError("recommendations are not implemented yet")
+        wanted = self.directions(interests)
+        if not wanted:
+            return None
+        taken = self._with_prerequisites(taken)
+        blocked = set(taken)
+        for code in taken:
+            module = self.modules.get(code, {})
+            blocked.update(module.get("excludes", []))
+            if module.get("level7_form"):
+                blocked.add(module["level7_form"])
+
+        if degree:
+            plan = self.degrees[degree]["years"].get(str(year)) or {}
+            pool = list(plan.get("optional", []))
+        else:
+            pool = [c for c, m in self.modules.items() if m["year"] == year]
+
+        def own(code: str) -> float:
+            return sum(wanted.get(s, 0) for s in self.modules[code].get("streams", []))
+
+        scored = []
+        for code in pool:
+            module = self.modules[code]
+            if (code in blocked or blocked & set(module.get("excludes", []))
+                    or module.get("not_running")):
+                continue
+            score = (own(code)
+                     + 0.5 * sum(own(c) for c in self.required_for.get(code, []))
+                     + 0.25 * sum(own(c) for c in self.useful_for.get(code, [])))
+            if score > 0:
+                scored.append((-score, code))
+        scored.sort()
+        # Weak links ("useful for one later module") should not fill the list.
+        if scored:
+            floor = -scored[0][0] / 4
+            scored = [(score, code) for score, code in scored if -score >= floor]
+
+        recommended, needs = [], []
+        for _, code in scored[:limit]:
+            missing = self._missing(code, taken)
+            areas = ", ".join(self.streams[s] for s in self.modules[code].get("streams", [])
+                              if s in wanted)
+            text = self.label(code) + (f": {areas}" if areas else ": leads on to modules in your area")
+            if missing and taken:
+                needs.append(f"{self.label(code)} needs " + ", ".join(missing) + " first")
+            else:
+                if missing:
+                    text += "; needs " + ", ".join(missing) + " first"
+                recommended.append(text)
+        order = sorted(wanted, key=lambda s: (-wanted[s], s))
+        return {
+            "directions": [self.streams[s] for s in order],
+            "recommended": recommended,
+            "needs_prerequisites": needs,
+        }
+
+    def _with_prerequisites(self, taken) -> set[str]:
+        """Everything taken, plus what those modules required: whoever took
+        Galois Theory has had Groups and Rings, even if they did not say so."""
+        done, todo = set(), list(taken)
+        while todo:
+            code = todo.pop()
+            if code in done:
+                continue
+            done.add(code)
+            todo.extend(self.modules.get(code, {}).get("prerequisites", {})
+                        .get("required", {}).get("all_of", []))
+        return done
+
+    def _missing(self, code: str, taken: set[str]) -> list[str]:
+        required = self.modules[code].get("prerequisites", {}).get("required", {})
+        missing = [c for c in required.get("all_of", []) if c not in taken]
+        for group in required.get("any_of", []):
+            if not taken & set(group):
+                missing.append(" or ".join(group))
+        return missing

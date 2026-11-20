@@ -15,7 +15,8 @@ from pathlib import Path
 import pytest
 from pippa_agentapp_sdk import LocalRunner, OutputShapeViolation
 
-from app import App, NoModuleNamed, UnknownDegree, UnknownModule, UnknownYear
+from app import (App, NoDirectionMatched, NoInterests, NoModuleNamed, UnknownDegree,
+                 UnknownModule, UnknownYear)
 from modules import DATA_FILES, Catalogue
 
 NOW = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
@@ -33,7 +34,7 @@ def test_the_manifest_is_valid():
     app = App()
     assert app.manifest.app_id == "hack.app_c510"
     assert [o.id for o in app.manifest.outcomes] == [
-        "modules.prerequisites", "modules.unlocks", "modules.options"]
+        "modules.prerequisites", "modules.unlocks", "modules.options", "modules.recommend"]
 
 
 # ── modules.prerequisites ──────────────────────────────────────────────────
@@ -143,6 +144,55 @@ def test_an_unknown_degree_and_year_are_refused():
         call("modules.options", {"degree": "G100", "year": 7})
 
 
+# ── Computing and JMC ──────────────────────────────────────────────────────
+
+
+def test_computing_options_for_a_year():
+    data = call("modules.options", {"degree": "G400", "year": 3}).data
+    assert data["degree"].startswith("G400 Computing")
+    assert any(m.startswith("COMP60010") for m in data["core"])
+    assert data["options"]
+
+
+def test_a_bare_subject_means_that_departments_default_degree():
+    assert call("modules.options", {"degree": "computing", "year": 1}).data[
+        "degree"].startswith("G400")
+
+
+def test_jmc_by_its_nickname():
+    data = call("modules.options", {"degree": "JMC MEng", "year": 4}).data
+    assert data["degree"].startswith("GG41")
+
+
+def test_computing_prerequisites_and_unlocks():
+    data = call("modules.prerequisites", {"module": "COMP60021"}).data
+    assert any(m.startswith("COMP50002") for m in data["essential"])
+    back = call("modules.unlocks", {"module": "COMP50002"}).data
+    assert any(m.startswith("COMP60021") for m in back["essential_for"])
+
+
+def test_an_either_or_prerequisite():
+    data = call("modules.prerequisites", {"module": "COMP70118"}).data
+    assert any(m.startswith("one of:") and "COMP60037" in m and "COMP70015" in m
+               for m in data["essential"])
+
+
+def test_recommend_for_a_computing_career():
+    data = call("modules.recommend", {"interests": "cybersecurity",
+                                      "degree": "G401", "year": 4}).data
+    assert data["interests_matched"] == ["Security and Privacy"]
+    assert any(m.startswith("COMP70004") for m in data["recommended"])
+
+
+def test_modules_not_running_are_never_recommended():
+    catalogue = Catalogue.load()
+    resting = {c for c, m in catalogue.modules.items() if m.get("not_running")}
+    assert resting
+    for interests in ("machine learning", "security", "software engineering", "robotics"):
+        data = call("modules.recommend", {"interests": interests, "year": 4}).data
+        assert not any(m.split()[0] in resting for m in data["recommended"])
+
+
 # ── Picked with @ ──────────────────────────────────────────────────────────
 
 
@@ -190,11 +240,21 @@ def test_every_referenced_code_exists():
 
 
 def test_no_alias_names_two_modules():
+    """Titles may repeat (a year 3 module and its year 4 form, or two modules
+    the department gave one name); an alias is a nickname and must not."""
+    titles = {m["title"].lower() for data in _files() for m in data["modules"].values()}
     seen: dict[str, str] = {}
     for data in _files():
         for code, module in data["modules"].items():
-            for name in {n.lower() for n in [module["title"], *module.get("aliases", [])]}:
+            for name in {n.lower() for n in module.get("aliases", [])} - titles:
                 assert seen.setdefault(name, code) == code, f"{name!r}: {seen[name]} and {code}"
+
+
+def test_each_module_is_defined_in_one_file_only():
+    seen: dict[str, str] = {}
+    for name, data in zip(DATA_FILES, _files()):
+        for code in data["modules"]:
+            assert seen.setdefault(code, name) == name, f"{code} in {seen[code]} and {name}"
 
 
 def test_no_prerequisite_loops():
@@ -234,6 +294,54 @@ def test_terms_years_and_ects_are_sensible():
                 assert stream in data["streams"], f"{code}: unknown stream {stream}"
 
 
-def test_the_recommendation_hook_is_there_but_not_wired():
-    with pytest.raises(NotImplementedError):
-        Catalogue.load().recommend(["MATH50006"], "quantitative finance")
+def test_every_stream_has_keywords_and_every_keyword_a_stream():
+    for data in _files():
+        assert set(data["stream_keywords"]) == set(data["streams"])
+        assert data["default_degree"] in data["degrees"]
+
+
+# ── modules.recommend ──────────────────────────────────────────────────────
+
+
+def test_recommend_for_a_career():
+    data = call("modules.recommend", {"interests": "quant at a hedge fund",
+                                      "degree": "G1GH", "year": 3}).data
+    assert "Financial Mathematics" in data["interests_matched"]
+    assert data["degree"].startswith("G1GH")
+    assert any("MATH60012" in m for m in data["recommended"])
+
+
+def test_missing_prerequisites_are_listed_apart():
+    data = call("modules.recommend", {"interests": "machine learning research",
+                                      "taken": "Probability for Statistics",
+                                      "degree": "G1G3", "year": 3}).data
+    assert any(m.startswith("MATH60049") and "MATH50011" in m
+               for m in data["needs_prerequisites"])
+    assert not any(m.startswith("MATH60049") for m in data["recommended"])
+
+
+def test_a_year_2_elective_is_recommended_for_where_it_leads():
+    data = call("modules.recommend", {"interests": "pure maths phd in number theory",
+                                      "degree": "G100", "year": 2}).data
+    assert data["recommended"][0].startswith("MATH50005")   # Groups and Rings
+
+
+def test_modules_already_taken_are_left_out_and_unknown_ones_named():
+    data = call("modules.recommend", {"interests": "number theory",
+                                      "taken": "Galois Theory, Underwater Basket Weaving"}).data
+    assert not any(m.startswith("MATH60037") for m in data["recommended"])
+    assert data["not_recognised"] == ["Underwater Basket Weaving"]
+
+
+def test_recommend_without_interests_or_with_none_known_says_what_to_type():
+    with pytest.raises(NoInterests):
+        call("modules.recommend", {})
+    with pytest.raises(NoDirectionMatched) as failure:
+        call("modules.recommend", {"interests": "knitting"})
+    assert "knitting" in failure.value.user_message
+
+
+def test_recommend_picked_by_name_behaves_the_same():
+    inputs = {"interests": "climate science", "degree": "G1F3"}
+    assert call("modules.recommend", inputs, explicit=True).data == \
+        call("modules.recommend", inputs).data
