@@ -50,9 +50,16 @@ def test_prerequisites_by_code():
 
 
 def test_prerequisites_by_bare_number_and_title():
-    by_number = call("modules.prerequisites", {"module": "60028"}).data
-    by_title = call("modules.prerequisites", {"module": "probability theory 1"}).data
+    by_number = call("modules.prerequisites", {"module": "50006"}).data
+    by_title = call("modules.prerequisites", {"module": "lebesgue measure and integration"}).data
     assert by_number == by_title
+
+
+def test_a_bare_number_two_departments_share_asks_which_one():
+    with pytest.raises(UnknownModule) as failure:
+        call("modules.prerequisites", {"module": "60028"})
+    assert "COMP60028" in failure.value.user_message
+    assert "MATH60028" in failure.value.user_message
 
 
 def test_prerequisites_by_alias():
