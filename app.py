@@ -1,40 +1,14 @@
-"""Your app. Replace this with whatever you are building.
+"""Module Navigator: prerequisites, follow-on modules and option rules.
 
-The shape never changes, whatever your app does:
-
-    class App:
-        manifest  -> the parsed manifest.yaml sitting next to this file
-        handle(call) -> Result
-
-`handle` is called once per request and must return a `Result` whose `data`
-matches the `output` your manifest declares for that outcome — exactly: every
-declared field present, nothing extra, right types. The runtime checks it and
-refuses anything that does not match, which is deliberate. An app that can
-return surprise fields is an app Pippa cannot describe to a user before they
-install it.
-
-Three things worth knowing before you start:
-
-**You get the inputs, and nothing about who asked.** No user id, no account,
-no conversation. `call.inputs` is what Pippa extracted from the message;
-besides it, `call.context` carries only the time, an id for your logs, and
-whether the person picked your app by name. This is on purpose: your app
-cannot leak what it was never given.
-
-**You keep nothing.** A fresh copy of this class is built for every call and
-thrown away afterwards. Writing to a file or a global will appear to work and
-then silently stop, because the next call may be on a different machine.
-
-**Errors are part of the design.** Raise `AgentAppError` with a `user_message`
-when you cannot answer. That message is the one a user may see; everything
-else — the exception type, the traceback — stays in the logs.
+The data is the catalogue in `modules.py`, loaded from the JSON files beside
+this one. No network: everything is answered from the published module
+guides, which were read in advance. Every answer names the academic year it
+comes from, because module guides change every year.
 """
 
 from __future__ import annotations
 
-from datetime import date, datetime, timedelta
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 from pippa_agentapp_sdk import (
     AgentAppError,
@@ -45,134 +19,154 @@ from pippa_agentapp_sdk import (
     validate_manifest,
 )
 
+from modules import Catalogue
+
 MANIFEST_PATH = Path(__file__).with_name("manifest.yaml")
 
+#: Without a degree, the plain Mathematics BSc: its year 3 options are the
+#: ones every maths degree shares, and the specialist rules are extra.
+DEFAULT_DEGREE = "G100"
+DEFAULT_YEAR = 3
+#: Saying only "maths" names no particular degree, so it gets the default.
+GENERIC_DEGREE = {"maths", "math", "mathematics", "imperial maths", "imperial mathematics"}
 
-class CannotReadDate(AgentAppError):
-    """Raised when the message did not contain a date we can work with."""
+TERM_NAMES = {1: "autumn", 2: "spring", 3: "summer"}
 
-    # What a user may be shown. Write it as a sentence, not an error code.
-    user_message = "I could not work out which date you meant."
+CHECK = "Unofficial: confirm with your department before you register."
+
+
+class NoModuleNamed(AgentAppError):
+    user_message = "Tell me which module you mean, by its code (like MATH60028) or its title."
+    retryable = False
+
+
+class UnknownModule(AgentAppError):
+    user_message = "I could not find that module in the Mathematics module guides I have."
+    retryable = False
+
+
+class UnknownDegree(AgentAppError):
+    user_message = (
+        "I only know the Imperial Mathematics degrees so far: G100, G103, G104, "
+        "G102, G125, G1F3, G1G3 and G1GH."
+    )
+    retryable = False
+
+
+class UnknownYear(AgentAppError):
+    user_message = "I have module choices for second and third year only."
     retryable = False
 
 
 class App:
-    """A small, complete example: count the days until a date."""
-
     def __init__(self) -> None:
-        # Validated at construction, so an app whose manifest is wrong fails
-        # immediately and loudly rather than on some later call.
         self._manifest = validate_manifest(load_manifest_file(MANIFEST_PATH))
+        self.catalogue = Catalogue.load()
 
     @property
     def manifest(self) -> Manifest:
         return self._manifest
 
     def handle(self, call: Call) -> Result:
-        """One request in, one Result out.
+        if call.outcome_id == "modules.prerequisites":
+            return self._prerequisites(call)
+        if call.outcome_id == "modules.unlocks":
+            return self._unlocks(call)
+        if call.outcome_id == "modules.options":
+            return self._options(call)
+        raise AgentAppError(f"this app cannot do {call.outcome_id!r}")
 
-        `call.outcome_id` says which of your manifest's outcomes was asked
-        for. With one outcome you can ignore it; with several, branch on it.
-        """
-        if call.outcome_id != "days.until":
-            raise AgentAppError(f"this app cannot do {call.outcome_id!r}")
+    # ── Outcomes ──────────────────────────────────────────────────────────
 
-        text = (call.inputs.get("date") or "").strip()
-        if not text:
-            # The manifest tells the extractor to send an empty string rather
-            # than guess, so this is the ordinary "they did not say" path.
-            #
-            # A missing or unreadable date (here, and in `_parse` below) is
-            # the only thing this app refuses for, which is why it never reads
-            # `call.context.explicit`, True when the person picked the app
-            # with @. That refusal is right whoever chose the app; the test
-            # that says so is in test_app.py.
-            raise CannotReadDate("no date in the message")
+    def _prerequisites(self, call: Call) -> Result:
+        code = self._module(call)
+        module = self.catalogue.modules[code]
+        found = self.catalogue.prerequisites(code)
+        data = {
+            "module": self.catalogue.label(code),
+            "academic_year": self.catalogue.academic_year[code],
+            "term": self._terms(module.get("terms") or []),
+            "ects": float(module["ects"]),
+            **found,
+        }
+        if module.get("notes"):
+            data["notes"] = module["notes"]
+        if found["essential"]:
+            sentence = f"{module['title']} needs {len(found['essential'])} module(s) first."
+        elif found["useful"]:
+            sentence = f"{module['title']} has no essential prerequisites, only useful ones."
+        else:
+            sentence = f"The guide lists no prerequisites for {module['title']}."
+        return Result(data=data, narrative=f"{sentence} {CHECK}")
 
-        # `call.context.now` is the current time, supplied by the runtime
-        # rather than read from the clock. That is what makes an app testable:
-        # a test can say what "now" is.
-        today = self._today(call)
-        target = self._parse(text, today)
-        difference = (target - today).days
-
+    def _unlocks(self, call: Call) -> Result:
+        code = self._module(call)
+        found = self.catalogue.unlocks(code)
+        title = self.catalogue.modules[code]["title"]
+        total = len(found["essential_for"]) + len(found["useful_for"])
+        sentence = (f"{title} leads on to {total} later module(s)." if total
+                    else f"No later module in the guides lists {title} as a prerequisite.")
         return Result(
             data={
-                "days": abs(difference),
-                "target_date": target.isoformat(),
-                "weekday": target.strftime("%A"),
-                "already_passed": difference < 0,
+                "module": self.catalogue.label(code),
+                "academic_year": self.catalogue.academic_year[code],
+                **found,
             },
-            # Optional. One plain sentence Pippa may use when it writes its
-            # reply. Say what you found, not what you did.
-            narrative=self._sentence(target, difference),
+            narrative=f"{sentence} {CHECK}",
         )
 
-    @staticmethod
-    def _today(call: Call) -> date:
-        """The user's today, not the server's.
-
-        A server in UTC and a user in Auckland disagree about what day it is
-        for twelve hours out of every twenty-four, and "how many days until"
-        is exactly the question that notices.
-        """
-        # No try/except around ZoneInfo, and that is the point: the manifest
-        # declares this input as `type: timezone`, so the runtime has already
-        # rejected anything that is not a real IANA zone before your code
-        # runs. Declaring the right type is cheaper than validating by hand,
-        # and the user gets a better error.
-        zone = call.inputs.get("timezone")
-        moment: datetime = call.context.now
-        if zone:
-            moment = moment.astimezone(ZoneInfo(zone))
-        return moment.date()
-
-    @staticmethod
-    def _parse(text: str, today: date) -> date:
-        """Turn what the user wrote into a date.
-
-        Deliberately small — real date parsing is its own project. Handles
-        `YYYY-MM-DD`, `25 December`, `December 25` and a bare day number.
-        """
-        cleaned = text.replace(",", " ").strip()
-
-        for fmt in ("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y"):
-            try:
-                return datetime.strptime(cleaned, fmt).date()
-            except ValueError:
-                continue
-
-        for fmt in ("%d %B", "%B %d", "%d %b", "%b %d"):
-            try:
-                parsed = datetime.strptime(cleaned, fmt).date()
-            except ValueError:
-                continue
-            # A bare day and month has no year. "25 December" asked in
-            # February means this year; asked in December means this year too,
-            # until it has passed, and then it means next year.
-            candidate = parsed.replace(year=today.year)
-            if candidate < today:
-                candidate = candidate.replace(year=today.year + 1)
-            return candidate
-
-        if cleaned.lower() == "tomorrow":
-            return today + timedelta(days=1)
-
-        raise CannotReadDate(f"could not parse {text!r} as a date")
-
-    @staticmethod
-    def _sentence(target: date, difference: int) -> str:
-        # Built by hand rather than with `%-d`, which is a GNU extension: it
-        # raises ValueError on Windows, where half of you are developing, and
-        # the failure would only show up at the last line of a working app.
-        pretty = (
-            f"{target.strftime('%A')} {target.day} "
-            f"{target.strftime('%B')} {target.year}"
+    def _options(self, call: Call) -> Result:
+        text = (call.inputs.get("degree") or "").strip()
+        degree = self.catalogue.find_degree(text) if text else DEFAULT_DEGREE
+        if degree is None and text.lower().strip(" .") in GENERIC_DEGREE:
+            degree, text = DEFAULT_DEGREE, ""
+        if degree is None:
+            raise UnknownDegree(f"no degree matches {text!r}")
+        year = call.inputs.get("year") or DEFAULT_YEAR
+        term = call.inputs.get("term")
+        found = self.catalogue.options(degree, year, term)
+        if found is None:
+            raise UnknownYear(f"no plan for {degree} year {year}")
+        rules = found["rules"]
+        if not text:
+            rules = [f"No degree given, so this is for {degree}; name your degree "
+                     "for its specialist rules.", *rules]
+        if term in TERM_NAMES:
+            rules = [f"Only modules taught in the {TERM_NAMES[term]} term are listed.", *rules]
+        info = self.catalogue.degrees[degree]
+        return Result(
+            data={
+                "degree": f"{degree} {info['title']}",
+                "year": year,
+                "academic_year": info["academic_year"],
+                "core": found["core"],
+                "options": found["options"],
+                "rules": rules,
+            },
+            narrative=(f"{len(found['core'])} core and {len(found['options'])} optional "
+                       f"module(s) for {degree} year {year}. {CHECK}"),
         )
-        if difference == 0:
-            return f"That is today, {pretty}."
-        if difference < 0:
-            return f"{pretty} was {abs(difference)} days ago."
-        if difference == 1:
-            return f"{pretty} is tomorrow."
-        return f"There are {difference} days until {pretty}."
+
+    # ── Helpers ───────────────────────────────────────────────────────────
+
+    def _module(self, call: Call) -> str:
+        text = (call.inputs.get("module") or "").strip()
+        if not text:
+            raise NoModuleNamed("no module in the message")
+        code, suggestions = self.catalogue.find(text)
+        if code:
+            return code
+        error = UnknownModule(f"no module matches {text!r}")
+        if suggestions:
+            names = "; ".join(self.catalogue.label(c) for c in suggestions[:5])
+            error.user_message = f"'{text}' could mean more than one module: {names}. Which one?"
+        else:
+            error.user_message = (f"I could not find '{text}' in the Imperial Mathematics "
+                                  "module guides I have.")
+        raise error
+
+    @staticmethod
+    def _terms(terms: list[int]) -> str:
+        if not terms:
+            return "not stated in the guide"
+        return " and ".join(TERM_NAMES.get(t, str(t)) for t in terms)

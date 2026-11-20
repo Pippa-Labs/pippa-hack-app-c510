@@ -1,0 +1,3047 @@
+{
+  "department": "Mathematics",
+  "institution": "Imperial College London",
+  "academic_year": "2026-27",
+  "checked_on": "2026-11-20",
+  "sources": [
+    "Department of Mathematics Year 2 Module Guide 2026-27",
+    "Department of Mathematics Year 3 Module Guide 2026-27",
+    "Department of Mathematics Year 4 Module Guide 2026-27"
+  ],
+  "streams": {
+    "fluid_dynamics": "Fluid Dynamics",
+    "mathematical_physics": "Mathematical Physics",
+    "dynamical_systems": "Dynamical Systems and Chaos",
+    "differential_equations": "Differential Equations and Analysis",
+    "computational": "Computational Mathematics",
+    "data_science": "Data Science, Statistics and Machine Learning",
+    "probability": "Probability and Stochastic Processes",
+    "finance": "Financial Mathematics",
+    "algebra": "Algebra and Number Theory",
+    "geometry": "Geometry and Topology",
+    "discrete_logic": "Discrete Mathematics, Logic and Foundations"
+  },
+  "degrees": {
+    "G100": {
+      "title": "Mathematics (BSc)",
+      "aliases": [
+        "mathematics bsc",
+        "maths bsc",
+        "bsc maths",
+        "bsc mathematics"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004"
+          ],
+          "optional": [
+            "MATH50005",
+            "MATH50006",
+            "MATH50008",
+            "MATH50009",
+            "MATH50010",
+            "MATH50011",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Take one i-Explore module (Group A) and four Group B electives."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4."
+          ]
+        }
+      }
+    },
+    "G103": {
+      "title": "Mathematics (MSci)",
+      "aliases": [
+        "mathematics msci",
+        "maths msci",
+        "msci maths",
+        "msci mathematics"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004"
+          ],
+          "optional": [
+            "MATH50005",
+            "MATH50006",
+            "MATH50008",
+            "MATH50009",
+            "MATH50010",
+            "MATH50011",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Take one i-Explore module (Group A) and four Group B electives."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4."
+          ]
+        }
+      }
+    },
+    "G104": {
+      "title": "Mathematics with a Year Abroad (MSci)",
+      "aliases": [
+        "maths with a year abroad",
+        "mathematics with a year abroad",
+        "maths year abroad"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004"
+          ],
+          "optional": [
+            "MATH50005",
+            "MATH50006",
+            "MATH50008",
+            "MATH50009",
+            "MATH50010",
+            "MATH50011",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Take one i-Explore module (Group A) and four Group B electives.",
+            "A required language module counts as your Group A module; it is core (7.5 ECTS, zero weight)."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4."
+          ]
+        }
+      }
+    },
+    "G102": {
+      "title": "Mathematics with Mathematical Computation",
+      "aliases": [
+        "maths with mathematical computation",
+        "mathematical computation",
+        "maths with computation"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004",
+            "MATH50009"
+          ],
+          "optional": [
+            "MATH50005",
+            "MATH50006",
+            "MATH50008",
+            "MATH50010",
+            "MATH50011",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Principles of Programming is core; take one i-Explore module and three more Group B electives."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4.",
+            "Your degree requires at least 3 of these computational modules: MATH60022, MATH60024, MATH60025, MATH60026. The BSc Research Project (MATH60050) can replace one of them."
+          ]
+        }
+      }
+    },
+    "G125": {
+      "title": "Mathematics (Pure Mathematics)",
+      "aliases": [
+        "pure maths",
+        "pure mathematics",
+        "maths pure",
+        "mathematics pure"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004",
+            "MATH50005",
+            "MATH50006"
+          ],
+          "optional": [
+            "MATH50008",
+            "MATH50009",
+            "MATH50010",
+            "MATH50011",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Groups and Rings and Lebesgue Measure and Integration are core; take one i-Explore module and two more Group B electives."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4.",
+            "Your degree requires at least 5 of these pure modules: MATH60028, MATH60029, MATH60030, MATH60031, MATH60032, MATH60033, MATH60034, MATH60035, MATH60036, MATH60037, MATH60038, MATH60039, MATH60040, MATH60041, MATH60042, MATH60132, MATH60140. The BSc Research Project (MATH60050) can replace one of them."
+          ]
+        }
+      }
+    },
+    "G1F3": {
+      "title": "Mathematics with Applied Mathematics/Mathematical Physics",
+      "aliases": [
+        "applied maths",
+        "applied mathematics",
+        "maths with applied maths",
+        "mathematical physics",
+        "maths with mathematical physics"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004",
+            "MATH50008"
+          ],
+          "optional": [
+            "MATH50005",
+            "MATH50006",
+            "MATH50009",
+            "MATH50010",
+            "MATH50011",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Applied PDEs is core; take one i-Explore module and three more Group B electives."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4.",
+            "Your degree requires at least 5 of these applied modules: MATH60001, MATH60002, MATH60003, MATH60004, MATH60005, MATH60007, MATH60008, MATH60009, MATH60014, MATH60015, MATH60016, MATH60017, MATH60018, MATH60019, MATH60021, MATH60022, MATH60023, MATH60024, MATH60025, MATH60026, MATH60054, MATH60135, MATH60141, MATH60143, MATH60147. The BSc Research Project (MATH60050) can replace one of them."
+          ]
+        }
+      }
+    },
+    "G1G3": {
+      "title": "Mathematics with Statistics",
+      "aliases": [
+        "maths with statistics",
+        "maths with stats",
+        "mathematics with statistics"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004",
+            "MATH50010",
+            "MATH50011"
+          ],
+          "optional": [
+            "MATH50005",
+            "MATH50006",
+            "MATH50008",
+            "MATH50009",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Probability for Statistics and Statistical Modelling are core; take one i-Explore module and two more Group B electives."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4.",
+            "Your degree requires at least 5 of these statistics modules: MATH60026, MATH60043, MATH60044, MATH60045, MATH60046, MATH60047, MATH60048, MATH60049, MATH60139. The BSc Research Project (MATH60050) can replace one of them."
+          ]
+        }
+      }
+    },
+    "G1GH": {
+      "title": "Mathematics with Statistics for Finance",
+      "aliases": [
+        "maths with statistics for finance",
+        "maths with stats for finance",
+        "statistics for finance",
+        "mathematics with statistics for finance"
+      ],
+      "years": {
+        "2": {
+          "core": [
+            "MATH50001",
+            "MATH50002",
+            "MATH50003",
+            "MATH50004",
+            "MATH50010",
+            "MATH50011"
+          ],
+          "optional": [
+            "MATH50005",
+            "MATH50006",
+            "MATH50008",
+            "MATH50009",
+            "MATH50020"
+          ],
+          "rules": [
+            "The four core modules and the Group Research Project are compulsory.",
+            "Every year 2 elective is worth 5 ECTS.",
+            "Probability for Statistics and Statistical Modelling are core; take one i-Explore module and two more Group B electives."
+          ]
+        },
+        "3": {
+          "core": [],
+          "optional": [
+            "MATH60001",
+            "MATH60002",
+            "MATH60003",
+            "MATH60004",
+            "MATH60005",
+            "MATH60006",
+            "MATH60007",
+            "MATH60008",
+            "MATH60009",
+            "MATH60010",
+            "MATH60014",
+            "MATH60015",
+            "MATH60016",
+            "MATH60017",
+            "MATH60018",
+            "MATH60019",
+            "MATH60021",
+            "MATH60022",
+            "MATH60023",
+            "MATH60024",
+            "MATH60025",
+            "MATH60026",
+            "MATH60054",
+            "MATH60135",
+            "MATH60141",
+            "MATH60143",
+            "MATH60147",
+            "MATH60028",
+            "MATH60029",
+            "MATH60030",
+            "MATH60031",
+            "MATH60032",
+            "MATH60033",
+            "MATH60034",
+            "MATH60035",
+            "MATH60036",
+            "MATH60037",
+            "MATH60038",
+            "MATH60039",
+            "MATH60040",
+            "MATH60041",
+            "MATH60042",
+            "MATH60132",
+            "MATH60140",
+            "MATH60043",
+            "MATH60044",
+            "MATH60045",
+            "MATH60046",
+            "MATH60047",
+            "MATH60048",
+            "MATH60049",
+            "MATH60139",
+            "MATH60012",
+            "MATH60130",
+            "MATH60150",
+            "MATH60050",
+            "BUSI60045",
+            "BUSI60043",
+            "BUSI60040"
+          ],
+          "rules": [
+            "There are no compulsory modules in year 3; every MATH6 module is worth 7.5 ECTS.",
+            "Take 60 or 62.5 ECTS in total: eight 7.5 ECTS modules, or seven 7.5 ECTS modules plus two 5 ECTS modules.",
+            "At least seven of your modules must be MATH6 (level 6) maths modules.",
+            "The rest can be another MATH6 module, a year 2 maths elective you have not taken, an approved module from another department, or up to two Computing modules.",
+            "At most one CLCC/Horizons or BPES module (5 ECTS); only one of the three BPES modules may be taken.",
+            "No more than two modules per term may have 50% or more of their assessment in term time.",
+            "You may not take both the MATH6 and MATH7 forms of the same module; level 7 modules need permission from the Director of Undergraduate Studies.",
+            "Register for between three and six modules in the autumn; registration closes at 1pm on the Monday of week 4.",
+            "Your degree requires at least 5 of these statistics and finance modules: MATH60012, MATH60043, MATH60044, MATH60045, MATH60046, MATH60047, MATH60048, MATH60049, MATH60130, MATH60139. The BSc Research Project (MATH60050) can replace one of them."
+          ]
+        }
+      }
+    }
+  },
+  "modules": {
+    "MATH50001": {
+      "title": "Analysis 2",
+      "aliases": [
+        "analysis 2",
+        "analysis ii",
+        "analysis two"
+      ],
+      "year": 2,
+      "terms": [
+        1,
+        2
+      ],
+      "ects": 10,
+      "in_term_percent": null,
+      "group": "core",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": "Builds on year 1 Analysis I."
+    },
+    "MATH50002": {
+      "title": "Group Research Project",
+      "aliases": [
+        "group research project",
+        "group project",
+        "year 2 group project"
+      ],
+      "year": 2,
+      "terms": [
+        3
+      ],
+      "ects": 5,
+      "in_term_percent": 100,
+      "group": "core",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": "Pass/fail."
+    },
+    "MATH50003": {
+      "title": "Linear Algebra and Numerical Analysis",
+      "aliases": [
+        "linear algebra and numerical analysis",
+        "lana",
+        "numerical analysis"
+      ],
+      "year": 2,
+      "terms": [
+        1,
+        2
+      ],
+      "ects": 10,
+      "in_term_percent": null,
+      "group": "core",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH50004": {
+      "title": "Multivariable Calculus and Differential Equations",
+      "aliases": [
+        "multivariable calculus and differential equations",
+        "multivariable calculus",
+        "mcde",
+        "multivariable calculus and des"
+      ],
+      "year": 2,
+      "terms": [
+        1,
+        2
+      ],
+      "ects": 10,
+      "in_term_percent": null,
+      "group": "core",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH50005": {
+      "title": "Groups and Rings",
+      "aliases": [
+        "groups and rings",
+        "groups & rings",
+        "rings and groups"
+      ],
+      "year": 2,
+      "terms": [
+        1
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "elective",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": "Builds on year 1 Linear Algebra and Groups."
+    },
+    "MATH50006": {
+      "title": "Lebesgue Measure and Integration",
+      "aliases": [
+        "lebesgue measure and integration",
+        "lebesgue",
+        "measure and integration",
+        "lebesgue integration",
+        "measure theory"
+      ],
+      "year": 2,
+      "terms": [
+        2
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "elective",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH50008": {
+      "title": "Applied PDEs",
+      "aliases": [
+        "applied pdes",
+        "pdes",
+        "applied partial differential equations",
+        "partial differential equations"
+      ],
+      "year": 2,
+      "terms": [
+        2
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "elective",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH50009": {
+      "title": "Principles of Programming",
+      "aliases": [
+        "principles of programming",
+        "programming",
+        "principles of programming in python"
+      ],
+      "year": 2,
+      "terms": [
+        1
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "elective",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": "Assumes year 1 Introduction to Computing."
+    },
+    "MATH50010": {
+      "title": "Probability for Statistics",
+      "aliases": [
+        "probability for statistics",
+        "probability for stats",
+        "prob for stats"
+      ],
+      "year": 2,
+      "terms": [
+        1
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "elective",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH50011": {
+      "title": "Statistical Modelling",
+      "aliases": [
+        "statistical modelling",
+        "statistical modelling 1",
+        "stat modelling",
+        "stats modelling"
+      ],
+      "year": 2,
+      "terms": [
+        2
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "elective",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH50020": {
+      "title": "Classical Mechanics",
+      "aliases": [
+        "classical mechanics",
+        "mechanics"
+      ],
+      "year": 2,
+      "terms": [
+        2
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "elective",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 2 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH60001": {
+      "title": "Fluid Dynamics 1",
+      "aliases": [
+        "fluid dynamics 1",
+        "fluids 1",
+        "fluid dynamics i"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "fluid_dynamics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70001"
+    },
+    "MATH60002": {
+      "title": "Fluid Dynamics 2",
+      "aliases": [
+        "fluid dynamics 2",
+        "fluids 2",
+        "fluid dynamics ii"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "fluid_dynamics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH60001"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70002"
+    },
+    "MATH60003": {
+      "title": "Introduction to Geophysical Fluid Dynamics",
+      "aliases": [
+        "introduction to geophysical fluid dynamics",
+        "geophysical fluid dynamics",
+        "gfd"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "fluid_dynamics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70003"
+    },
+    "MATH60004": {
+      "title": "Asymptotic Methods",
+      "aliases": [
+        "asymptotic methods",
+        "asymptotics"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "fluid_dynamics",
+        "differential_equations"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50008"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70004"
+    },
+    "MATH60005": {
+      "title": "Optimisation",
+      "aliases": [
+        "optimisation",
+        "optimization"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "computational",
+        "data_science",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "",
+      "level7_form": "MATH70005"
+    },
+    "MATH60006": {
+      "title": "Applied Complex Analysis",
+      "aliases": [
+        "applied complex analysis"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "fluid_dynamics",
+        "differential_equations"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "",
+      "level7_form": "MATH70006"
+    },
+    "MATH60007": {
+      "title": "Dynamics of Learning and Iterated Games",
+      "aliases": [
+        "dynamics of learning and iterated games",
+        "iterated games",
+        "dynamics of learning"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 100,
+      "group": "applied",
+      "streams": [
+        "dynamical_systems",
+        "data_science"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "",
+      "level7_form": "MATH70007"
+    },
+    "MATH60008": {
+      "title": "Dynamical Systems",
+      "aliases": [
+        "dynamical systems"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "dynamical_systems"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50010",
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70008"
+    },
+    "MATH60009": {
+      "title": "Bifurcation Theory",
+      "aliases": [
+        "bifurcation theory",
+        "bifurcations"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "dynamical_systems"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "The guide's syllabus heading misprints the code as MATH60031.",
+      "level7_form": "MATH70009"
+    },
+    "MATH60010": {
+      "title": "Geometric Mechanics",
+      "aliases": [
+        "geometric mechanics"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "mathematical_physics",
+        "geometry"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70010"
+    },
+    "MATH60014": {
+      "title": "Mathematical Biology",
+      "aliases": [
+        "mathematical biology",
+        "maths biology",
+        "math bio"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "dynamical_systems",
+        "differential_equations"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70014"
+    },
+    "MATH60015": {
+      "title": "Quantum Mechanics I",
+      "aliases": [
+        "quantum mechanics i",
+        "quantum mechanics 1",
+        "qm1",
+        "qm 1"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "mathematical_physics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70015"
+    },
+    "MATH60016": {
+      "title": "Special Relativity and Electromagnetism",
+      "aliases": [
+        "special relativity and electromagnetism",
+        "special relativity",
+        "electromagnetism"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "mathematical_physics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70016"
+    },
+    "MATH60017": {
+      "title": "Tensor Calculus and General Relativity",
+      "aliases": [
+        "tensor calculus and general relativity",
+        "general relativity",
+        "tensor calculus"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "mathematical_physics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70017"
+    },
+    "MATH60018": {
+      "title": "Quantum Mechanics II",
+      "aliases": [
+        "quantum mechanics ii",
+        "quantum mechanics 2",
+        "qm2",
+        "qm 2"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "mathematical_physics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50020",
+          "MATH60015"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70018"
+    },
+    "MATH60019": {
+      "title": "Theory of PDEs",
+      "aliases": [
+        "theory of pdes",
+        "theory of partial differential equations"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "differential_equations"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50008"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70019"
+    },
+    "MATH60021": {
+      "title": "Advanced PDEs 2",
+      "aliases": [
+        "advanced pdes 2",
+        "advanced pdes ii",
+        "advanced partial differential equations 2"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "differential_equations"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50008",
+          "MATH60135"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide."
+    },
+    "MATH60022": {
+      "title": "Finite Elements",
+      "aliases": [
+        "finite elements",
+        "finite element method",
+        "finite elements: numerical analysis and implementation"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 50,
+      "group": "applied",
+      "streams": [
+        "differential_equations",
+        "computational"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50009"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70022"
+    },
+    "MATH60023": {
+      "title": "Computational Dynamical Systems",
+      "aliases": [
+        "computational dynamical systems"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 50,
+      "group": "applied",
+      "streams": [
+        "dynamical_systems",
+        "computational"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50009"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70023"
+    },
+    "MATH60024": {
+      "title": "Computational Linear Algebra",
+      "aliases": [
+        "computational linear algebra",
+        "comp lin alg"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 50,
+      "group": "applied",
+      "streams": [
+        "computational"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50009"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70024"
+    },
+    "MATH60025": {
+      "title": "Computational PDEs",
+      "aliases": [
+        "computational pdes",
+        "computational partial differential equations"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 50,
+      "group": "applied",
+      "streams": [
+        "fluid_dynamics",
+        "differential_equations",
+        "computational"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50009"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70025"
+    },
+    "MATH60026": {
+      "title": "Methods for Data Science",
+      "aliases": [
+        "methods for data science",
+        "data science methods"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 100,
+      "group": "applied",
+      "streams": [
+        "data_science"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "",
+      "level7_form": "MATH70026"
+    },
+    "MATH60054": {
+      "title": "Introduction to Stochastic Differential Equations and Diffusion Processes",
+      "aliases": [
+        "introduction to stochastic differential equations and diffusion processes",
+        "intro to sdes",
+        "sdes and diffusion processes",
+        "stochastic differential equations"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "mathematical_physics",
+        "differential_equations",
+        "probability",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70054"
+    },
+    "MATH60135": {
+      "title": "Advanced PDEs 1",
+      "aliases": [
+        "advanced pdes 1",
+        "advanced pdes i",
+        "advanced partial differential equations 1"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "differential_equations"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50008"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide."
+    },
+    "MATH60141": {
+      "title": "Introduction to Game Theory",
+      "aliases": [
+        "introduction to game theory",
+        "game theory"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "applied",
+      "streams": [
+        "dynamical_systems"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "",
+      "level7_form": "MATH70141"
+    },
+    "MATH60143": {
+      "title": "Dynamics, Symmetry and Integrability",
+      "aliases": [
+        "dynamics, symmetry and integrability",
+        "dynamics symmetry and integrability"
+      ],
+      "year": 3,
+      "terms": [],
+      "ects": 7.5,
+      "in_term_percent": null,
+      "group": "applied",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Has a syllabus in the Year 3 guide but is missing from its module tables; term and assessment not stated."
+    },
+    "MATH60147": {
+      "title": "Statistical Mechanics",
+      "aliases": [
+        "statistical mechanics",
+        "stat mech"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 50,
+      "group": "applied",
+      "streams": [
+        "mathematical_physics"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50008"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50020"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70147"
+    },
+    "MATH60028": {
+      "title": "Probability Theory 1",
+      "aliases": [
+        "probability theory 1",
+        "probability theory i",
+        "prob theory 1"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "probability",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50006"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005",
+          "MATH50010"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70028"
+    },
+    "MATH60029": {
+      "title": "Functional Analysis",
+      "aliases": [
+        "functional analysis"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "differential_equations"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50006"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70029"
+    },
+    "MATH60030": {
+      "title": "Fourier Analysis and Theory of Distributions",
+      "aliases": [
+        "fourier analysis and theory of distributions",
+        "fourier analysis",
+        "theory of distributions"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "differential_equations",
+        "probability"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50006"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005",
+          "MATH60029"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70030"
+    },
+    "MATH60031": {
+      "title": "Probability Theory 2",
+      "aliases": [
+        "probability theory 2",
+        "probability theory ii",
+        "prob theory 2"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "probability",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50006"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005",
+          "MATH60028"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70031"
+    },
+    "MATH60032": {
+      "title": "Geometry of Curves and Surfaces",
+      "aliases": [
+        "geometry of curves and surfaces",
+        "curves and surfaces"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "geometry"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50006"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005",
+          "MATH50001"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70032"
+    },
+    "MATH60033": {
+      "title": "Geometry I: Algebraic Curves",
+      "aliases": [
+        "geometry i: algebraic curves",
+        "algebraic curves",
+        "geometry 1",
+        "geometry i"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "geometry"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70033"
+    },
+    "MATH60034": {
+      "title": "Geometry II: Algebraic Topology",
+      "aliases": [
+        "geometry ii: algebraic topology",
+        "algebraic topology",
+        "geometry 2",
+        "geometry ii"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "geometry"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50001"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70034"
+    },
+    "MATH60035": {
+      "title": "Algebra III",
+      "aliases": [
+        "algebra iii",
+        "algebra 3"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "algebra"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70035"
+    },
+    "MATH60036": {
+      "title": "Group Theory",
+      "aliases": [
+        "group theory"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "algebra"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70036"
+    },
+    "MATH60037": {
+      "title": "Galois Theory",
+      "aliases": [
+        "galois theory",
+        "galois"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "algebra"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70037"
+    },
+    "MATH60038": {
+      "title": "Graph Theory",
+      "aliases": [
+        "graph theory"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "geometry",
+        "discrete_logic"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70038"
+    },
+    "MATH60039": {
+      "title": "Group Representation Theory",
+      "aliases": [
+        "group representation theory",
+        "representation theory"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "algebra"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70039"
+    },
+    "MATH60040": {
+      "title": "Formalising Mathematics",
+      "aliases": [
+        "formalising mathematics",
+        "formalising maths",
+        "lean"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 100,
+      "group": "pure",
+      "streams": [
+        "computational",
+        "discrete_logic"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005",
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70040"
+    },
+    "MATH60041": {
+      "title": "Number Theory",
+      "aliases": [
+        "number theory"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "algebra",
+        "discrete_logic"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70041"
+    },
+    "MATH60042": {
+      "title": "Algebraic Number Theory",
+      "aliases": [
+        "algebraic number theory"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "algebra"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50005"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH60035"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70042"
+    },
+    "MATH60132": {
+      "title": "Mathematical Logic",
+      "aliases": [
+        "mathematical logic",
+        "logic"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "discrete_logic"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005",
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70132"
+    },
+    "MATH60140": {
+      "title": "Geometric Complex Analysis",
+      "aliases": [
+        "geometric complex analysis"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "pure",
+      "streams": [
+        "geometry"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50006"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50005"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70140"
+    },
+    "MATH60043": {
+      "title": "Foundations of Modelling and Inference",
+      "aliases": [
+        "foundations of modelling and inference",
+        "modelling and inference"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 0,
+      "group": "statistics",
+      "streams": [
+        "data_science",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50010",
+            "MATH50011"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70043"
+    },
+    "MATH60044": {
+      "title": "Applied Statistical Inference",
+      "aliases": [
+        "applied statistical inference",
+        "statistical inference"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 25,
+      "group": "statistics",
+      "streams": [
+        "data_science",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50010",
+            "MATH50011"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70044"
+    },
+    "MATH60045": {
+      "title": "Applied Probability",
+      "aliases": [
+        "applied probability"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "statistics",
+      "streams": [
+        "probability",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50010"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70045"
+    },
+    "MATH60046": {
+      "title": "Time Series Analysis",
+      "aliases": [
+        "time series analysis",
+        "time series"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 0,
+      "group": "statistics",
+      "streams": [
+        "data_science",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50010"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50011"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70046"
+    },
+    "MATH60047": {
+      "title": "Stochastic Simulation",
+      "aliases": [
+        "stochastic simulation"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 0,
+      "group": "statistics",
+      "streams": [
+        "computational",
+        "probability",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50010"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50011"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70047"
+    },
+    "MATH60048": {
+      "title": "Survival Models",
+      "aliases": [
+        "survival models",
+        "survival analysis"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "statistics",
+      "streams": [
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50010",
+            "MATH50011"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70048"
+    },
+    "MATH60049": {
+      "title": "Introduction to Statistical Learning",
+      "aliases": [
+        "introduction to statistical learning",
+        "statistical learning",
+        "intro to statistical learning"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 0,
+      "group": "statistics",
+      "streams": [
+        "data_science"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [
+            "MATH50010",
+            "MATH50011"
+          ],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70049"
+    },
+    "MATH60139": {
+      "title": "Spatial Statistics",
+      "aliases": [
+        "spatial statistics",
+        "spatial stats"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "statistics",
+      "streams": [
+        "data_science"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006",
+          "MATH50011"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70139"
+    },
+    "MATH60012": {
+      "title": "Mathematical Finance: An Introduction to Option Pricing",
+      "aliases": [
+        "mathematical finance: an introduction to option pricing",
+        "mathematical finance",
+        "option pricing"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 10,
+      "group": "finance",
+      "streams": [
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70012"
+    },
+    "MATH60130": {
+      "title": "Stochastic Differential Equations in Financial Modelling",
+      "aliases": [
+        "stochastic differential equations in financial modelling",
+        "sdes in financial modelling",
+        "financial modelling"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 7.5,
+      "in_term_percent": 0,
+      "group": "finance",
+      "streams": [
+        "probability",
+        "finance"
+      ],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": [
+          "MATH50006"
+        ]
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Prerequisites are provisional, per the Year 2 guide.",
+      "level7_form": "MATH70130"
+    },
+    "MATH60150": {
+      "title": "Communicating Mathematics",
+      "aliases": [
+        "communicating mathematics",
+        "communicating maths"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 7.5,
+      "in_term_percent": 100,
+      "group": "other",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": ""
+    },
+    "MATH60050": {
+      "title": "BSc Research Project",
+      "aliases": [
+        "bsc research project",
+        "research project",
+        "bsc project",
+        "year 3 project"
+      ],
+      "year": 3,
+      "terms": [
+        2,
+        3
+      ],
+      "ects": 7.5,
+      "in_term_percent": 100,
+      "group": "other",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Can replace one of the specialist modules a specialist degree requires."
+    },
+    "BUSI60045": {
+      "title": "Managing Innovation",
+      "aliases": [
+        "managing innovation"
+      ],
+      "year": 3,
+      "terms": [
+        1
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "business",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [
+        "BUSI60043",
+        "BUSI60040"
+      ],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "Business for Professional Engineers and Scientists (BPES) module."
+    },
+    "BUSI60043": {
+      "title": "Finance and Financial Management",
+      "aliases": [
+        "finance and financial management",
+        "finance & financial management"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "business",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [
+        "BUSI60045",
+        "BUSI60040"
+      ],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "BPES module. Not available to anyone who took Corporate Finance Online as their year 2 i-Explore."
+    },
+    "BUSI60040": {
+      "title": "Corporate Finance Online",
+      "aliases": [
+        "corporate finance online"
+      ],
+      "year": 3,
+      "terms": [
+        2
+      ],
+      "ects": 5,
+      "in_term_percent": null,
+      "group": "business",
+      "streams": [],
+      "prerequisites": {
+        "required": {
+          "all_of": [],
+          "any_of": []
+        },
+        "recommended": []
+      },
+      "excludes": [
+        "BUSI60045",
+        "BUSI60043"
+      ],
+      "source": "Year 3 Module Guide 2026-27",
+      "notes": "BPES module."
+    }
+  }
+}
